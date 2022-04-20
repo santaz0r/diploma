@@ -1,0 +1,34 @@
+[
+    {
+        "_id": "67rdca3eeb7f6fgeed471198",
+        "name": "Мягкий",
+        "color": "primary"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471100",
+        "name": "Износостойкий",
+        "color": "secondary"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed4711012",
+        "name": "Лучший",
+        "color": "success"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471101",
+        "name": "Хрупкий",
+        "color": "danger"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471102",
+        "name": "Долговечный",
+        "color": "info"
+    },
+    {
+        "_id": "67rdca3eeb7f6fgeed471103",
+        "name": "Качественный",
+        "color": "dark"
+    }
+]
+
+   

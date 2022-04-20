@@ -1,0 +1,7 @@
+{
+    "port" : 8080,
+    "mongoUri": "mongodb://u2nwk2owpnc2avpmsbmz:TA1f1KsXQkD2ltvqjJwW@bwaybpfzpmxnida-mongodb.services.clever-cloud.com:27017/bwaybpfzpmxnida",
+    "accessSecret": "oijngtioniogzxid",
+    "refreshSecret": "ohigfdiohymoidmo",
+    "ADMIN_ACCESS" : "625ee915bd06ee3898167981"
+}
