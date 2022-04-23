@@ -11,7 +11,15 @@ const DashboardTable = () => {
     const products = useSelector(getProductsList());
     const history = useHistory();
     const [formOpen, setFormOpen] = useState(false);
-
+    const changeClass = () => {
+        return (
+            "container-fluid" +
+            (formOpen ? " d-flex justify-content-center" : "")
+        );
+    };
+    const changeButtonText = () => {
+        return formOpen ? "Закрыть форму" : "Открыть форму";
+    };
     const onClick = (id) => {
         history.push(location.pathname + `/${id}/edit`);
     };
@@ -69,29 +77,29 @@ const DashboardTable = () => {
     };
 
     return (
-        <div className="container-fluid">
+        <div className={changeClass()}>
             <div className="row">
                 {formOpen && (
-                    <div className="col-md-3  p-1">
-                        <h2>Добавить товар</h2>
-
+                    <div className="card">
                         <AddProductForm />
                     </div>
                 )}
-
-                <div className="col-md-8">
-                    <h2>Список всех товаров</h2>
-                    <p>
-                        Чтобы добавить новый товар нажмите
-                        <button
-                            className="btn btn-primary large"
-                            onClick={handleClick}
-                        >
-                            Добавить
-                        </button>
-                    </p>
-
-                    <Table columns={columns} data={products} />
+            </div>
+            <div className="row">
+                <div className={"card"}>
+                    <div className="card-body">
+                        <h2>Список всех товаров</h2>
+                        <p>
+                            Чтобы добавить новый товар нажмите
+                            <button
+                                className="btn btn-primary ms-1"
+                                onClick={handleClick}
+                            >
+                                {changeButtonText()}
+                            </button>
+                        </p>
+                        <Table columns={columns} data={products} />
+                    </div>
                 </div>
             </div>
         </div>

@@ -111,74 +111,77 @@ const AddProductForm = () => {
     };
 
     return (
-        <div className="row">
-            <form onSubmit={handleSubmit}>
-                <TextField
-                    label="Наименование продукта"
-                    name="name"
-                    value={data.name}
-                    onChange={handleChange}
-                    error={errors.name}
-                />
-                <TextField
-                    label="Описание продукта"
-                    name="description"
-                    value={data.description}
-                    onChange={handleChange}
-                    error={errors.description}
-                />
-                <TextField
-                    label="Цена"
-                    name="price"
-                    value={data.price}
-                    onChange={handleChange}
-                    error={errors.price}
-                />
-                <TextField
-                    label="Количество на складе"
-                    name="inStock"
-                    value={data.inStock}
-                    onChange={handleChange}
-                    error={errors.inStock}
-                />
-                <TextField
-                    label="Рейтинг продукта"
-                    name="rate"
-                    value={data.rate}
-                    onChange={handleChange}
-                    error={errors.rate}
-                />
-                <TextField
-                    label="Вставьте ссылку на изображение"
-                    name="image"
-                    value={data.image}
-                    onChange={handleChange}
-                    error={errors.image}
-                />
-                <SelectField
-                    defaultOption="Выбрать...."
-                    options={transformData(categories)}
-                    label="Выберите категорию"
-                    onChange={handleChange}
-                    value={data.category}
-                    name="category"
-                    error={errors.category}
-                />
-                <MultiSelectField
-                    options={transformData(properties)}
-                    onChange={handleChange}
-                    defaultValue={data.property}
-                    name="property"
-                    label="Свойства товара"
-                />
+        <div className="card-body">
+            <h2>Добавить товар</h2>
+            <div className="">
+                <form onSubmit={handleSubmit}>
+                    <TextField
+                        label="Наименование продукта"
+                        name="name"
+                        value={data.name}
+                        onChange={handleChange}
+                        error={errors.name}
+                    />
+                    <TextField
+                        label="Описание продукта"
+                        name="description"
+                        value={data.description}
+                        onChange={handleChange}
+                        error={errors.description}
+                    />
+                    <TextField
+                        label="Цена"
+                        name="price"
+                        value={data.price}
+                        onChange={handleChange}
+                        error={errors.price}
+                    />
+                    <TextField
+                        label="Количество на складе"
+                        name="inStock"
+                        value={data.inStock}
+                        onChange={handleChange}
+                        error={errors.inStock}
+                    />
+                    <TextField
+                        label="Рейтинг продукта"
+                        name="rate"
+                        value={data.rate}
+                        onChange={handleChange}
+                        error={errors.rate}
+                    />
+                    <TextField
+                        label="Вставьте ссылку на изображение"
+                        name="image"
+                        value={data.image}
+                        onChange={handleChange}
+                        error={errors.image}
+                    />
+                    <SelectField
+                        defaultOption="Выбрать...."
+                        options={transformData(categories)}
+                        label="Выберите категорию"
+                        onChange={handleChange}
+                        value={data.category}
+                        name="category"
+                        error={errors.category}
+                    />
+                    <MultiSelectField
+                        options={transformData(properties)}
+                        onChange={handleChange}
+                        defaultValue={data.property}
+                        name="property"
+                        label="Свойства товара"
+                    />
 
-                <button
-                    disabled={!isValid}
-                    className="btn btn-primary w-100 mx-auto"
-                >
-                    Submit
-                </button>
-            </form>
+                    <button
+                        disabled={!isValid}
+                        className="btn btn-primary w-100 mx-auto"
+                    >
+                        Submit
+                    </button>
+                </form>
+            </div>
         </div>
     );
 };

@@ -31,7 +31,6 @@ const EditProductPage = () => {
 
     const dispatch = useDispatch();
     const product = useSelector(getProductById(productId));
-    console.log(product);
 
     const transformData = (data) => {
         if (data) {
@@ -42,14 +41,6 @@ const EditProductPage = () => {
         }
     };
     const propertiesList = useSelector(getPropertiesByIds(product.property));
-    console.log(propertiesList);
-    const getProperty = (id) => {
-        if (properties) {
-            return properties.find((p) => p._id === id);
-        }
-    };
-    const props = product.property.map((p) => getProperty(p));
-    console.log(props);
 
     useEffect(() => {
         if (!categoriesLoading && !propertiesLoading && product && !data) {

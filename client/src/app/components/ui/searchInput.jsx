@@ -8,6 +8,7 @@ const SearchInput = ({ onChange, value, onClearSearch }) => {
     return (
         <form onSubmit={handleSearchSubmit}>
             <div
+                className="mb-2"
                 style={{
                     position: "relative"
                 }}

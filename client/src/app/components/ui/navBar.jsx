@@ -19,13 +19,6 @@ const NavBar = () => {
                             Main
                         </Link>
                     </li>
-                    {isAdmin && (
-                        <li className="nav-item">
-                            <Link className="nav-link" to={"/dashboard"}>
-                                Dashboard
-                            </Link>
-                        </li>
-                    )}
 
                     <li className="nav-item">
                         <Link className="nav-link" to={"/products"}>
@@ -33,7 +26,12 @@ const NavBar = () => {
                         </Link>
                     </li>
                 </ul>
-                <div className="d-flex">
+                <div className="d-flex align-items-center me-4">
+                    {isAdmin && (
+                        <Link className="nav-link" to={"/dashboard"}>
+                            Dashboard
+                        </Link>
+                    )}
                     {currentUser ? (
                         <NavProfile isAdmin={isAdmin} />
                     ) : (

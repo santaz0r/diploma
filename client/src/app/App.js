@@ -6,6 +6,8 @@ import Dashboard from "./layouts/dashboard";
 import NavBar from "./components/ui/navBar";
 import Login from "./layouts/login";
 import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 import ProtectedRoute from "./components/common/protectedRoute";
 import LogOut from "./layouts/logOut";
 import UsersLoader from "./components/ui/hoc/usersLoader";

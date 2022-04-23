@@ -7,16 +7,17 @@ import {
     loadProductsList
 } from "../../../store/products";
 import { loadPropertiesList } from "../../../store/properties";
-import { loadUsersList } from "../../../store/users";
+import { getIsLoggedIn, loadUsersList } from "../../../store/users";
 const AppLoader = ({ children }) => {
     const dispatch = useDispatch();
     const productsStatusLoading = useSelector(getProductsLoadingStatus());
+    const isLoggedIn = useSelector(getIsLoggedIn());
     useEffect(() => {
         dispatch(loadPropertiesList());
         dispatch(loadCategoriesList());
         dispatch(loadProductsList());
         dispatch(loadUsersList());
-    }, []);
+    }, [isLoggedIn]);
     if (productsStatusLoading) return "loading";
     return children;
 };

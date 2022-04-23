@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useHistory } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import ProductCard from "../../ui/productCard";
 import Feedbacks from "../../ui/feedbacks";
 import { useSelector } from "react-redux";
@@ -29,7 +29,8 @@ const ProductPage = ({ productId }) => {
             </div>
         );
     }
-    return <h1>Loading Product</h1>;
+
+    return <Redirect to="/products" />;
 };
 
 ProductPage.propTypes = {
