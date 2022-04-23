@@ -5,7 +5,8 @@ const Main = () => {
         <div className="container d-flex justify-content-center">
             <div className="card">
                 <div className="card-body">
-                    <h2>Было выполнено:</h2>
+                    <h2>Работа студента 12-й группы Муравьева Виктора.</h2>
+                    <h3>Было выполнено:</h3>
                     <p>Общее</p>
                     <ul>
                         <li>Поиск товара по его названию</li>
