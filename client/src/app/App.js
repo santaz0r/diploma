@@ -13,6 +13,8 @@ import LogOut from "./layouts/logOut";
 import UsersLoader from "./components/ui/hoc/usersLoader";
 import ProductsLoader from "./components/ui/hoc/productsLoader";
 import AppLoader from "./components/ui/hoc/appLoader";
+import CartPage from "./components/pages/cartPage/cartPage";
+import ProtectedRouteUsers from "./components/common/protectedRouteUsers";
 
 function App() {
     return (
@@ -29,6 +31,10 @@ function App() {
                             component={Dashboard}
                         />
                         <UsersLoader>
+                            <ProtectedRouteUsers
+                                path="/cart"
+                                component={CartPage}
+                            />
                             <Route
                                 path="/products/:productId?"
                                 component={Products}

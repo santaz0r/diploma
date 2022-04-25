@@ -15,6 +15,9 @@ const schema = new Schema(
       type: String,
     },
     image: String,
+    cart: {
+      type: [{ type: Schema.Types.ObjectId, ref: "Product" }],
+    },
   },
   {
     timestamps: true,

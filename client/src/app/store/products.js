@@ -109,6 +109,21 @@ export const getProductById = (productId) => (state) => {
         return state.products.entities.find((p) => p._id === productId);
     }
 };
+export const getProductsByIds = (productIds) => (state) => {
+    if (state.products.entities) {
+        const productsArray = [];
+        for (const prodsId of productIds) {
+            for (const product of state.products.entities) {
+                if (product._id === prodsId) {
+                    productsArray.push(product);
+                    break;
+                }
+            }
+        }
+        return productsArray;
+    }
+    return [];
+};
 export const getProductsLoadingStatus = () => (state) =>
     state.products.isLoading;
 

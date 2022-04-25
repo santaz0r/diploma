@@ -22,8 +22,12 @@ const Login = () => {
                             <h3 className="mb-4">Register</h3>
                             <RegisterForm />
                             <p>
-                                Already have an account?{" "}
-                                <a role="button" onClick={toggleFormType}>
+                                Already have an account?
+                                <a
+                                    role="button"
+                                    onClick={toggleFormType}
+                                    style={{ textDecoration: "underline" }}
+                                >
                                     Sign in
                                 </a>
                             </p>
@@ -34,7 +38,11 @@ const Login = () => {
                             <LoginForm />
                             <p>
                                 Dont have an account?{" "}
-                                <a role="button" onClick={toggleFormType}>
+                                <a
+                                    style={{ textDecoration: "underline" }}
+                                    role="button"
+                                    onClick={toggleFormType}
+                                >
                                     Sign up
                                 </a>
                             </p>

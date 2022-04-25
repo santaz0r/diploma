@@ -60,6 +60,11 @@ const usersSlice = createSlice({
         },
         authRequested: (state) => {
             state.error = null;
+        },
+        addToCartSuccessed: (state, action) => {
+            state.entities[
+                state.entities.findIndex((u) => u._id === action.payload._id)
+            ] = action.payload;
         }
     }
 });
@@ -71,10 +76,14 @@ const {
     usersRequestFailed,
     authRequestSuccess,
     authRequestFailed,
-    userLoggedOut
+    userLoggedOut,
+    addToCartSuccessed
 } = actions;
 
 const authRequested = createAction("users/authRequested");
+const addToCartRequested = createAction("users/addToCartRequested");
+const addToCartRequestedFailed = createAction("users/addToCartRequestedFailed");
+
 export const logIn =
     ({ payload, redirect }) =>
     async (dispatch) => {
@@ -122,11 +131,25 @@ export const loadUsersList = () => async (dispatch) => {
         dispatch(usersRequestFailed(error.message));
     }
 };
+export const updateCart = (payload) => async (dispatch) => {
+    dispatch(addToCartRequested());
+    try {
+        const { content } = await userService.updateCart(payload);
 
+        dispatch(addToCartSuccessed(content));
+    } catch (error) {
+        dispatch(addToCartRequestedFailed(error.message));
+    }
+};
 export const getUserById = (userId) => (state) => {
     if (state.users.entities) {
         return state.users.entities.find((u) => u._id === userId);
     }
+};
+export const getCurrentUserData = () => (state) => {
+    return state.users.entities
+        ? state.users.entities.find((u) => u._id === state.users?.auth?.userId)
+        : null;
 };
 
 export const getIsLoggedIn = () => (state) => state.users.isLoggedIn;

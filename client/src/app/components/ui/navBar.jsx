@@ -16,24 +16,29 @@ const NavBar = () => {
                 <ul className="nav">
                     <li className="nav-item">
                         <Link className="nav-link" aria-current="page" to={"/"}>
-                            Main
+                            Главная
                         </Link>
                     </li>
 
                     <li className="nav-item">
                         <Link className="nav-link" to={"/products"}>
-                            ProductsList
+                            Список товаров
                         </Link>
                     </li>
                 </ul>
                 <div className="d-flex align-items-center me-4">
                     {isAdmin && (
                         <Link className="nav-link" to={"/dashboard"}>
-                            Dashboard
+                            Панель управления
                         </Link>
                     )}
                     {currentUser ? (
-                        <NavProfile isAdmin={isAdmin} />
+                        <>
+                            <Link to={"/cart"}>
+                                Корзина <i className="bi bi-cart-fill"></i>
+                            </Link>
+                            <NavProfile isAdmin={isAdmin} />
+                        </>
                     ) : (
                         <Link
                             className="nav-link"
