@@ -30,7 +30,7 @@ const Counter = ({
         <div>
             <div>Наименование товара: {rest.name}</div>
             <div>Стоимость: ${rest.price}</div>
-            <div>Количесвто для покупки:</div>
+            <div>Количество для покупки:</div>
             <button
                 className="btn btn-primary btn-sm m-2"
                 onClick={handleDecrement}

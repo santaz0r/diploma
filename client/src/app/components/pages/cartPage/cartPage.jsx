@@ -57,7 +57,7 @@ const CartPage = () => {
     if (productsList.length !== 0) {
         return (
             <div className="container">
-                <h1>my cart</h1>
+                <h1>Корзина</h1>
 
                 {counters.map((p) => (
                     <Counter
